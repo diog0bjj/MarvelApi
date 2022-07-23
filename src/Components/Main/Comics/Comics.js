@@ -22,14 +22,11 @@ export default function Comics(){
         }
 
         const filteredComics = allComics.filter((item)=>{
-            if (item.title.toLowerCase().includes(e.target.value.toLowerCase())) {
-                return true
-              };
+            return item.title.toLowerCase().includes(e.target.value.toLowerCase());
         })
         setComics(filteredComics);
     };
 
-    console.log(comics)
     return(
         <S.CharactersPage>
         <S.SearchBar onChange={e=>Search(e)} placeholder="Search the marvel's comics here..."/>

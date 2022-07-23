@@ -16,19 +16,15 @@ export default function Events(){
 
         if (e.target.value === "") {
             setEvents(allEvents)
-            
             return events
         }
 
         const filteredEvents = allEvents.filter((item)=>{
-            if (item.title.toLowerCase().includes(e.target.value.toLowerCase())) {
-                return true
-              };
+            return item.title.toLowerCase().includes(e.target.value.toLowerCase())
         })
         setEvents(filteredEvents);
     };
 
-    console.log(events)
     return(
         <S.CharactersPage>
         <S.SearchBar onChange={e=>Search(e)} placeholder="Search the marvel's events here..."/>

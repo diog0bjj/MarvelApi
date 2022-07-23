@@ -21,14 +21,11 @@ export default function Series(){
         }
 
         const filteredSeries = allSeries.filter((item)=>{
-            if (item.title.toLowerCase().includes(e.target.value.toLowerCase())) {
-                return true
-              };
+            return item.title.toLowerCase().includes(e.target.value.toLowerCase())
         })
         setSeries(filteredSeries);
     };
 
-    console.log(series)
     return(
         <S.CharactersPage>
         <S.SearchBar onChange={e=>Search(e)} placeholder="Search the marvel's series here..."/>

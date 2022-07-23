@@ -26,7 +26,8 @@ display:Flex;
 flex-wrap:wrap;
 justify-content:center;
 width:90vw;
-padding-top:1rem;`
+padding-top:1rem;
+min-height:50vh;`
 
 export const Character = styled.div`
 height:18rem;

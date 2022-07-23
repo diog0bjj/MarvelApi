@@ -6,7 +6,7 @@ export default function Main(){
 
     const [characters, setCharacters] = useState([])
     const [allCharacters, setAllCharacters]=useState([])
-
+   
     useEffect(()=>{
         axios.get(`http://gateway.marvel.com/v1/public/characters?ts=1658467852&apikey=a235cab1739de0e73faa2be2d65f815a&hash=b582cb688982c7c8aee9d32ffc0727cb`).then((response)=>{setCharacters(response.data.data.results)})
         axios.get(`http://gateway.marvel.com/v1/public/characters?ts=1658467852&apikey=a235cab1739de0e73faa2be2d65f815a&hash=b582cb688982c7c8aee9d32ffc0727cb`).then((response)=>{setAllCharacters(response.data.data.results)})
@@ -21,9 +21,7 @@ export default function Main(){
         }
 
         const filteredCharacters = allCharacters.filter((item)=>{
-            if (item.name.toLowerCase().includes(e.target.value.toLowerCase())) {
-                return true
-              };
+            return item.name.toLowerCase().includes(e.target.value.toLowerCase());
         })
         setCharacters(filteredCharacters);
     };
